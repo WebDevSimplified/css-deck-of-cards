@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    background-color: #ddd;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    --card-width: 5em;
+    font-size: 1rem;
+    width: var(--card-width);
+    height: calc(var(--card-width)*1.4);
+    background-color: #fff;
+    border-radius: 0.25em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    padding: 0.875em;
+    align-items: center;
+    position: relative;
+    /* transform: rotate(180deg); */
+}
+
+[data-sign="heart"].card,
+[data-sign="diamond"].card {
+    color: red;
+}
+
+[data-sign="spade"].card,
+[data-sign="club"].card {
+    color: black;
+}
+
+.pip {
+    --row: 6;
+    --column: 2;
+    grid-column: var(--column);
+    grid-row: var(--row) / span 2;
+}
+
+.pip:only-of-type{
+    width: 3em;
+}
+
+.pip.flip {
+    transform: rotate(180deg);
+}
+
+.corner-number {
+    --letter-spacing:-0.15em;
+    --edge-sapcing:0.2em;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: var(--letter-spacing);
+    font-size: 1em;
+}
+
+.corner-number.top {
+    top: var(--edge-sapcing);
+    left: var(--edge-sapcing);
+}
+
+.corner-number.bottom {
+    bottom: var(--edge-sapcing);
+    right: var(--edge-sapcing);
+    transform: rotate(180deg);
+}
+
+.corner-number::after {
+    line-height: 0;
+    display: inline-block;
+    width: .5em;
+    content: var(--src);
+    transform: translateX(calc(var(--letter-spacing)*-0.5));
+}
