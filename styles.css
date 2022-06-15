@@ -140,6 +140,89 @@ body {
   grid-column-end: span 3;
 }
 
+.one {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+
+.two {
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+
+.two-end {
+  grid-row-start: 1;
+  grid-column-start: 2;
+}
+
+.three {
+  grid-row-start: 1;
+  grid-column-start: 3;
+}
+
+.four-center {
+  grid-row-start: 4;
+  grid-column-start: 1;
+}
+
+.four {
+  grid-row-start: 3;
+  grid-column-start: 1;
+}
+
+.five {
+  grid-row-start: 4;
+  grid-column-start: 2;
+}
+
+.six-center {
+  grid-row-start: 4;
+  grid-column-start: 3;
+}
+
+.six {
+  grid-row-start: 3;
+  grid-column-start: 3;
+}
+
+.seven {
+  grid-row-start: 5;
+  grid-column-start: 1;
+  transform: rotate(180deg);
+}
+
+.eight-end {
+  grid-row-start: 8;
+  grid-column-start: 2;
+  transform: rotate(180deg);
+}
+
+.eight {
+  grid-row-start: 6;
+  grid-column-start: 2;
+  transform: rotate(180deg);
+}
+
+.nine {
+  grid-row-start: 5;
+  grid-column-start: 3;
+  transform: rotate(180deg);
+}
+
+.ten {
+  grid-row-start: 7;
+  grid-column-start: 1;
+  transform: rotate(180deg);
+}
+
+.eleven {
+  grid-row-start: 7;
+  grid-column-start: 3;
+  transform: rotate(180deg);
+}
+
+/* 
 [data-value="2"] .pip:first-child {
   grid-row-start: 1;
   grid-column-start: 2;
@@ -432,4 +515,4 @@ body {
   grid-row-start: 6;
   grid-column-start: 2;
   transform: rotate(180deg);
-}
+} */

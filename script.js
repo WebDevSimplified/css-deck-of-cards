@@ -1,3 +1,15 @@
+const placementConfig = {
+  '2': ["two-end", "eight-end"],
+  '3': ["two-end", "five", "eight-end"],
+  '4': ["one", "three", "ten", "eleven"],
+  '5': ["one", "three", "five", "ten", "eleven"],
+  '6': ["one", "three", "four-center", "six-center", "ten", "eleven"],
+  '7': ["one", "two", "three", "four-center", "six-center", "ten", "eleven"],
+  '8': ["one", "two", "three", "four-center", "six-center", "eight", "ten", "eleven"],
+  '9': ["one", "three", "four", "five", "six", "seven", "nine", "ten", "eleven"],
+  '10': ["one", "two", "three", "four", "six", "seven", "eight", "nine", "ten", "eleven"]
+}
+
 const cards = document.querySelectorAll(".card")
 
 cards.forEach(addCardElements)
@@ -10,8 +22,10 @@ function addCardElements(card) {
   if (isNaN(valueAsNumber)) {
     card.append(createPip())
   } else {
-    for (let i = 0; i < valueAsNumber; i++) {
-      card.append(createPip())
+    for (let i = 0; i < valueAsNumber; i++) { 
+      const positions = placementConfig[value]
+      const pipPosition = positions[i]
+      card.append(createPip(pipPosition))
     }
   }
 
@@ -27,8 +41,9 @@ function createCornerNumber(position, value) {
   return corner
 }
 
-function createPip() {
+function createPip(position) {
   const pip = document.createElement("div")
   pip.classList.add("pip")
+  pip.classList.add(position)
   return pip
 }
